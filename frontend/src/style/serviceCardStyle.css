@@ -74,3 +74,22 @@
 .select-button:hover {
   background-color: #e65c00; 
 }
+
+.icon-container {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-with-text {
+  display: flex;
+  align-items: center;
+}
+
+.icon-with-text .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-with-text span {
+  margin-left: 5px;
+}

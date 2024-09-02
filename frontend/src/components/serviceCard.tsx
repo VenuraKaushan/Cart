@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bed from '../assets/bed.svg';
 import night from '../assets/night.svg';
 import adult from '../assets/adults.svg';
 import child from '../assets/child.svg';
 import park from '../assets/parking.svg';
 import pet from '../assets/pets.svg';
-import './style.css'
+import Modal from './modal'; 
+import '../style/serviceCardStyle.css';
 
 interface ServiceCardProps {
   property_name: string;
@@ -36,6 +37,21 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   pets,
   website,
 }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleConfirm = () => {
+    setModalOpen(false);
+    
+  };
+
   return (
     <div className="service-card">
       <div className="card-image">
@@ -49,17 +65,37 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <div className="card-details">
           <p className="price">USD {price}</p>
           <div className="icon-container">
-            <img src={bed} alt={`${bedrooms} beds`} className="icon" />
-            <img src={night} alt="Night" className="icon" />
-            <img src={adult} alt={`${adults} adults`} className="icon" />
-            <img src={child} alt={`${children} children`} className="icon" />
-            <img src={park} alt={`${parking} parking spots`} className="icon" />
-            <img src={pet} alt={`${pets} pets allowed`} className="icon" />
+            <div className="icon-with-text">
+              <img src={bed} alt="Beds" className="icon" />
+              <span>{bedrooms}</span>
+            </div>
+            <div className="icon-with-text">
+              <img src={night} alt="Nights" className="icon" />
+              <span>Night</span>
+            </div>
+            <div className="icon-with-text">
+              <img src={adult} alt="Adults" className="icon" />
+              <span>{adults}</span>
+            </div>
+            <div className="icon-with-text">
+              <img src={child} alt="Children" className="icon" />
+              <span>{children}</span>
+            </div>
+            <div className="icon-with-text">
+              <img src={park} alt="Parking" className="icon" />
+              <span>{parking}</span>
+            </div>
+            <div className="icon-with-text">
+              <img src={pet} alt="Pets" className="icon" />
+              <span>{pets}</span>
+            </div>
           </div>
-          <button className="select-button">Select</button>
+          <button className="select-button" onClick={handleOpenModal}>Select</button>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} onConfirm={handleConfirm} />
     </div>
   );
 };
+
 export default ServiceCard;

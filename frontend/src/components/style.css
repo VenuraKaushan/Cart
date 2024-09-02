@@ -1,18 +1,17 @@
-/* Updated CSS for ServiceCard component */
 
 .service-card {
   display: flex;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
-  border-radius: 10px; /* Increased border radius for a softer look */
+  border-radius: 10px; 
 }
 
 .card-image {
   width: 200px;
   height: 150px;
   overflow: hidden;
-  border-radius: 10px; /* Match the border radius with the container */
+  border-radius: 10px; 
 }
 
 .image {
@@ -27,16 +26,16 @@
 }
 
 .property-name {
-  font-size: 20px; /* Slightly increased font size */
+  font-size: 20px; 
   font-weight: bold;
-  margin-bottom: 8px; /* Slightly increased margin */
+  margin-bottom: 8px; 
 }
 
 .property-code,
 .check-in,
 .check-out {
   margin-bottom: 5px;
-  font-size: 14px; /* Adjust font size for consistency */
+  font-size: 14px;
 }
 
 .card-details {
@@ -47,31 +46,31 @@
 
 .price {
   font-weight: bold;
-  font-size: 16px; /* Adjust font size for consistency */
+  font-size: 16px;
 }
 
 .icon-container {
   display: flex;
-  gap: 8px; /* Increased gap between icons */
+  gap: 8px;
 }
 
 .icon {
-  width: 18px; /* Slightly reduced icon size */
+  width: 18px; 
   height: 18px;
 }
 
 .select-button {
-  padding: 8px 12px; /* Slightly increased padding */
+  padding: 8px 12px; 
   background-color: #ff6600;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 14px; /* Adjust font size for consistency */
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
 .select-button:hover {
-  background-color: #e65c00; /* Slightly darker color on hover */
+  background-color: #e65c00; 
 }
